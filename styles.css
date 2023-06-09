@@ -1,0 +1,324 @@
+:root{
+    --text-color: #0e8098;
+    --text-accent: #E79E78;
+    --bg2: #F3F3F5;
+}
+
+.center{
+    text-align:center;
+}
+
+.accent{
+    background-color: var(--bg2);
+}
+
+.mobile{
+    display:none;
+}
+
+h2{
+    width:100%;
+    color: var(--text-color);
+    font-weight:700;
+    font-size:1.8em;
+    margin-top: 0;
+    margin-bottom: 0;
+    text-align: left;
+}
+
+h3{
+    width:100%;
+    margin:0;
+    color: var(--text-color);
+    font-size:1.3em;
+}
+
+body{
+    display:flex;
+    /* height:300%; */
+    margin:0;
+    padding:0;
+    font-family: 'Arial';
+    flex-direction: column;
+    align-items: center;
+    text-align: justify;
+    /* width: 100vw; */
+    /* overflow: hidden; */
+    height: auto;
+}
+
+header{
+    height:115px;
+    position:fixed;
+    background-color: var(--text-color);
+    width: 100%;
+    z-index: 5
+}
+
+#hero{
+    margin-top:115px;
+    display:flex;
+    flex-direction: column;
+    height: auto;
+    width:100%;
+    align-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+#hero h1{
+    color:white;
+    font-family: 'Arial';
+    text-align: center;
+    font-size: 2.125em;
+    margin-bottom: 70px;
+    margin-top:50px;
+}
+
+#hero h2{
+    max-width: 800px;
+    text-align: center;
+    /* padding: 0 30px; */
+    width: 90%;
+}
+
+
+#hero p{
+    max-width: 1200px;
+    font-size: 1.18em;
+    padding: 0 40px;
+    margin-bottom: 0;
+}
+
+/* 1075 breakpoint */
+#hero-image{
+    position:absolute;
+    width: 100%;
+    background-image: url('images/extract-lab.jpg');
+    height:500px;
+    background-repeat: none;
+    background-size: 100% auto;
+
+    z-index: -1;
+    background-position: center;
+}
+
+#hero-image::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    backdrop-filter: blur(2px);
+    z-index: -1;
+}
+
+
+#hero-bottle{
+    max-width:1000px;
+}
+
+.spacer{
+    height:70px;
+    width:100%;
+    background: transp;
+}
+
+article{
+    width: 100%;
+    font-size: 19px;
+    /* padding: 0 100px; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: space-between;
+    flex-wrap: wrap;
+}
+
+article section{
+    margin: 0 30px;
+}
+
+nav{
+    width: 100%;
+    font-size: 19px;
+    /* padding: 0 100px; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    flex-wrap: wrap;
+}
+
+nav section{
+    max-width: 1200px;
+    margin: 0 100px;
+    width: 80vw;
+}
+
+article h3{
+    width:60%;
+    margin:40px 0;
+}
+
+#herbsafety{
+    background-color: var(--bg2);
+    max-width: 1200px;
+    padding: 0 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#herbsafetymobile{
+    display:none;
+}
+
+.image-text{
+    max-width: 1200px;
+    display:flex;
+    flex-direction: row;
+}
+
+.image-text img{
+    height:100%;
+    /* margin: 0 0 0 40px; */
+    border-radius: 15px;
+}
+
+.image-text .left{
+    margin: 0 40px 0 0;
+}
+
+.image-text section img{
+    height:80px;
+}
+
+.accent #heavy img{
+    width:40%;
+
+}
+
+.related-pages{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 0px;
+    margin-top:20px;
+    width: 100%;
+    text-align: left;
+}
+
+.grid-item{
+    width:90%;
+    padding:20px 10px;
+    border-top: 2px solid #DFDEE6;
+    text-decoration: none;
+    color:black;
+}
+
+.grid-item:hover{
+    background-color: var(--bg2);
+
+}
+
+.grid-item:nth-last-child(-n+2) {
+    border-bottom: 2px solid #DFDEE6;
+}
+
+.selected{
+    background-color: var(--bg2);
+    color: var(--text-accent);
+}
+
+@media (max-width:1000px){
+    #hero-image{
+        background-repeat: none; /* Scale the background image to cover the entire element */
+        height:400px;
+    }
+    #hero-bottle{
+        scale:0.8;
+        width:100%;
+        height:auto;
+        min-width:650px;
+    }
+    #hero p{
+        text-align: justify;
+    }
+    .image-text{
+        flex-direction: column;
+        align-items: center;
+    }
+    .mobile{
+        display:block;
+        border-radius: 15px;
+    }
+    .desktop{
+        display:none;
+    }
+    .image-text img:not(.logo){
+        margin: 30px 30px;
+        width: 90%;
+    }
+    .accent #heavy img {
+        width:90%;
+    }
+}
+
+@media (max-width:700px){
+    #herbsafetymobile{
+        display:block;
+        width: 40%;
+    }
+    #herbsafety img:not(.mobile){
+        display:none;
+    }
+}
+
+@media (max-width:600px){
+    .related-pages{
+        display:flex;
+        flex-direction: column;
+    }
+    #herbsafetymobile{
+        width: 80%;
+    }
+}
+
+@media (max-width:520px){
+    #hero-image{
+        background-repeat: none; /* Scale the background image to cover the entire element */
+        height:300px;
+    }
+    #hero-bottle{
+        scale:0.6;
+        width:100%;
+        height:auto;
+        min-width:650px;
+    }
+    #hero h1{
+        margin-bottom:10px;
+    }
+
+}
+
+@media (max-width:400px){
+    #hero-image{
+        background-size: auto 100%; /* Scale the background image to cover the entire element */
+        height:300px;
+    }
+    #hero-bottle{
+        scale:0.45;
+        width:100%;
+        height:auto;
+        min-width:650px;
+    }
+    #hero h1{
+        margin-bottom:0px;
+    }
+
+}
+
+
+
