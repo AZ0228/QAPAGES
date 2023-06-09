@@ -2,9 +2,11 @@
     --text-color: #0e8098;
     --text-accent: #E79E78;
     --bg2: #F3F3F5;
+    --max-width: 1740px;
+    --margin: 80px;
 }
 
-.center{
+.center{    
     text-align:center;
 }
 
@@ -80,14 +82,16 @@ header{
     text-align: center;
     /* padding: 0 30px; */
     width: 90%;
+    margin: 0 var(--margin);
 }
 
 
 #hero p{
-    max-width: 1200px;
+    max-width: var(--max-width);
     font-size: 1.18em;
-    padding: 0 40px;
+    padding: 0 var(--margin);
     margin-bottom: 0;
+    /* margin-left: var(--margin); */
 }
 
 /* 1075 breakpoint */
@@ -136,8 +140,8 @@ article{
     flex-wrap: wrap;
 }
 
-article section{
-    margin: 0 30px;
+article section:not(.image-text){
+    /* margin: 0 30px; */
 }
 
 nav{
@@ -152,7 +156,7 @@ nav{
 }
 
 nav section{
-    max-width: 1200px;
+    max-width: var(--max-width);
     margin: 0 100px;
     width: 80vw;
 }
@@ -164,8 +168,8 @@ article h3{
 
 #herbsafety{
     background-color: var(--bg2);
-    max-width: 1200px;
-    padding: 0 10px;
+    max-width: var(--max-width);
+    margin: 0 var(--margin);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -176,9 +180,11 @@ article h3{
 }
 
 .image-text{
-    max-width: 1200px;
+    max-width: var(--max-width);
     display:flex;
     flex-direction: row;
+    padding: 0 var(--margin);
+    gap: 30px;
 }
 
 .image-text img{
@@ -233,6 +239,9 @@ article h3{
 }
 
 @media (max-width:1000px){
+    :root{
+        --margin: 60px;
+    }
     #hero-image{
         background-repeat: none; /* Scale the background image to cover the entire element */
         height:400px;
@@ -267,6 +276,9 @@ article h3{
 }
 
 @media (max-width:700px){
+    :root{
+        --margin: 40px;
+    }
     #herbsafetymobile{
         display:block;
         width: 40%;
