@@ -137,7 +137,7 @@ nav{
 
 nav section{
     max-width: var(--max-width);
-    margin: 0 100px;
+    margin: var(--margin);
     width: 80vw;
 }
 
