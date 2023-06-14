@@ -10,6 +10,9 @@
     text-align:center;
 }
 
+p:not(.herotext){
+    width:100%;
+}
 .accent{
     background-color: var(--bg2);
 }
@@ -19,7 +22,7 @@
 }
 
 h2{
-    width:100%;
+    width: 100%;
     color: var(--text-color);
     font-weight:700;
     font-size:1.8em;
@@ -75,7 +78,7 @@ header{
 }
 
 #hero h2{
-    max-width: 800px;
+    max-width: 1740px;
     text-align: center;
     /* padding: 0 30px; */
     width: 90%;
@@ -86,8 +89,10 @@ header{
 #hero p{
     max-width: var(--max-width);
     font-size: 1.18em;
-    padding: 0 var(--margin);
+    /* padding: 0 var(--margin); */
     margin-bottom: 0;
+    width: 90%;
+    /* margin: 1em 40px 0 40px; */
 }
 
 #hero-image{
@@ -126,7 +131,7 @@ header{
 article,
 nav{
     width: 100%;
-    font-size: 19px;
+    font-size: 1.1em;
     /* padding: 0 100px; */
     display: flex;
     flex-direction: column;
@@ -146,8 +151,9 @@ article h3{
     margin:40px 0;
 }
 
-#herbsafety{
-    background-color: var(--bg2);
+#herbsafety,
+.text{
+    /* background-color: var(--bg2); */
     max-width: var(--max-width);
     margin: 0 var(--margin);
     display: flex;
@@ -164,20 +170,26 @@ article h3{
     display:flex;
     flex-direction: row;
     padding: 0 var(--margin);
-    gap: 30px;
+    gap: 35px;
+    justify-content: space-between;
 }
 
-.image-text img{
+.image-text img:not(.logo):not(.manufacture img){
     height:100%;
     /* margin: 0 0 0 40px; */
     border-radius: 15px;
+    width: 450px;
 }
 
 .image-text .left{
-    margin: 0 40px 0 0;
+    /* margin: 0 40px 0 0; */
 }
 
-.image-text section img{
+.logo{
+    height:90px;
+}
+
+.image-text section img:not(.logo){
     height:80px;
 }
 
@@ -218,6 +230,44 @@ article h3{
     color: var(--text-accent);
 }
 
+#advantages{
+    width: 450px;
+    margin-left: 50px;
+}
+
+.many{
+    width:45%;
+    flex-grow:1;
+}
+
+.manufacture{
+    display:flex;
+    gap: 10px;
+}
+
+.manufacture img{
+    height: 300px;
+    border-radius: 10px;
+}
+
+.manufacture p{
+    display: flex;
+    /* font-size:0.9em; */
+    margin: 0;
+    text-align: left;
+    align-items: center;
+    /* justify-content: center; */
+}
+
+.image-text div:not(.manufacture){
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 10px;
+    max-width: 600px;
+}
+
 @media (max-width:1000px){
     :root{
         --margin: 60px;
@@ -236,8 +286,16 @@ article h3{
         text-align: justify;
     }
     .image-text{
+        width: 90%;
         flex-direction: column;
         align-items: center;
+        padding:0;
+    }
+    .many{
+        width:90%;
+    }
+    .image-text div:not(.manufacture){
+        width:90%;
     }
     .mobile{
         display:block;
@@ -246,18 +304,25 @@ article h3{
     .desktop{
         display:none;
     }
-    .image-text img:not(.logo){
+    .image-text img:not(.logo):not(.manufacture img){
         margin: 30px 30px;
         width: 90%;
     }
     .accent #heavy img {
         width:90%;
     }
+    #advantages{
+        width:70%;
+    }
+    .manufacture img{
+        width:100%;
+        height:auto;
+    }
 }
 
 @media (max-width:700px){
     :root{
-        --margin: 40px;
+        --margin: 20px;
     }
     #herbsafetymobile{
         display:block;
@@ -265,6 +330,9 @@ article h3{
     }
     #herbsafety img:not(.mobile){
         display:none;
+    }
+    #advantages{
+        width:90%;
     }
 }
 
@@ -275,6 +343,9 @@ article h3{
     }
     #herbsafetymobile{
         width: 80%;
+    }
+    .manufacture{
+        flex-direction: column;
     }
 }
 
