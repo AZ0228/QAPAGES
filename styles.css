@@ -318,6 +318,9 @@ article h3{
         width:100%;
         height:auto;
     }
+    .manufacture{
+        flex-direction: column;
+    }
 }
 
 @media (max-width:700px){
@@ -344,9 +347,7 @@ article h3{
     #herbsafetymobile{
         width: 80%;
     }
-    .manufacture{
-        flex-direction: column;
-    }
+
 }
 
 @media (max-width:520px){
@@ -354,13 +355,14 @@ article h3{
         height:300px;
     }
     #hero-bottle{
-        scale:0.6;
-        width:100%;
+        scale: 0.6;
+        width: 200px;
         height:auto;
         min-width:650px;
+        transform: translateY(-30px);
     }
     #hero h1{
-        margin-bottom:10px;
+        margin-bottom: 0px;
     }
 
 }
